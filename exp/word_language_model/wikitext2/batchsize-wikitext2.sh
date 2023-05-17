@@ -49,6 +49,7 @@ for model in "${MODEL_LIST[@]}" ; do
                     --wandb_entity ${WANDB_ENTITY} \
                     --wandb_project_name ${WANDB_PROJECT_NAME} \
                     "
+                    
         CMD="sbatch run_wikitext2.sh ${SHELL_ARGS}"
         echo $CMD
         eval $CMD

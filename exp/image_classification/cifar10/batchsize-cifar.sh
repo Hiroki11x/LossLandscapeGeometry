@@ -23,11 +23,6 @@ MOMENTUM_LIST=(0.9)
 BATCH_SIZE_LIST=(64 128 256 512)
 BASE_LR=0.005
 
-count=0
-lower_bound=0
-upper_bound=100
-
-
 # ======== Hyper Parameter Search Loop  ========
 for momentum in "${MOMENTUM_LIST[@]}" ; do
     for batch_size in "${BATCH_SIZE_LIST[@]}" ; do 
