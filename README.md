@@ -11,6 +11,7 @@ Our work provides novel insights into the properties of neural network loss func
 
 
 ## Prerequisites
+The codes in this repository is intended to work on clusters with Slurm's job scheduler.
 
 #### Environment
 
@@ -45,23 +46,28 @@ wandb                        0.13.7
 - [WikiText-2](https://blog.salesforceairesearch.com/the-wikitext-long-term-dependency-language-modeling-dataset/)
 - [Vaihingen](https://www.isprs.org/education/benchmarks/UrbanSemLab/default.aspx)
 
-
 ## Quick Start
+1. Change python path in `exp/env/cluster_env.sh` and module which you need to load
+2. Change wandb entity to yours for each shell scripts such as `exp/image_classification/cifar10/batchsize-cifar.sh`
+3. Change path to Imagenet in `exp/image_classification/imagenet1k/run_imagenet.sh` for launching imagenet task
+4. Start following shells
+
+## Reproduction Experiment
 
 #### Image Classification Tasks
 
 To run the ablation study of the optimizer in the image classification task of CIFAR-10, execute the following shell.
 
 ```
-./exp/image_classification/cifar10/ablation_opt.sh
+./exp/image_classification/cifar10/opt-cifar.sh
 ```
 
 #### Word Language Modeling Tasks
 
-To run the ablation study of the batchszie in the word language modeling task of WIkiText-2, execute the following shell.
+To run the ablation study of the batchszie in the word language model task of WIkiText-2, execute the following shell.
 
 ```
-./exp/word_language_model/wikitext2/ablation_batchsize.sh
+./exp/word_language_model/wikitext2/batchsize-wikitext2.sh
 ```
 
 #### Segmentation Tasks
@@ -69,7 +75,7 @@ To run the ablation study of the batchszie in the word language modeling task of
 To run the ablation study of the model architecture type in the segementation task of Vaihingen, execute the following shell.
 
 ```
-./exp/segmentation/vaihingen/ablation_model-arch.sh
+./exp/segmentation/vaihingen/model-arch-vaihingen.sh
 ```
 
 ## License
