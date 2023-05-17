@@ -153,7 +153,7 @@ torch/version.py
 minifier_launcher.py
 # Root level file used in CI to specify certain env configs.
 # E.g., see .circleci/config.yaml
-env
+# env
 .circleci/scripts/COMMIT_MSG
 scripts/release_notes/*.json
 sccache-stats*.json
@@ -357,7 +357,7 @@ bazel-*
 xla/
 
 # direnv, posh-direnv
-.env
+# .env
 .envrc
 .psenvrc
 
@@ -521,9 +521,9 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
+# env/
 venv/
-ENV/
+# ENV/
 env.bak/
 venv.bak/
 
