@@ -3,7 +3,12 @@ import attr
 from .resnet_cifar import ResNet18_1_Cifar, ResNet18_2_Cifar, ResNet18_3_Cifar
 from .resnet_imagenet import ResNet18_1, ResNet18_2, ResNet18_3, ResNet50_1, ResNet50_2, ResNet152_05, ResNet152_1
 from .mlp import Medium_MLP
+
 from .transformer import TransformerModel
+
+from .unet import UNet
+from .segnet import SegNet
+
 
 @attr.s
 class ModelSetting:
@@ -59,6 +64,14 @@ def build_model(setting: ModelSetting):
 
     if name == 'resnet152_1':
         model = ResNet152_1(num_classes)
+        return model
+    
+    if name == 'unet':
+        model = UNet(3, num_classes)
+        return model
+    
+    if name == 'segnet':
+        model = SegNet(3, num_classes)
         return model
 
     raise ValueError(f'The selected model {name} is not supported for this implementation.')

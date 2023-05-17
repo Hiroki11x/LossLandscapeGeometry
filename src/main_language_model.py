@@ -369,7 +369,6 @@ if __name__ == "__main__":
     parser.add_argument('--model', type=str, default='Transformer', help='type of network')
     parser.add_argument('--dataset', type=str, default='wikitext-2')
     parser.add_argument('--data_root', type=str, default='./data/wikitext-2', help='location of the data corpus')
-    parser.add_argument('--patience', type=int, default=200)
 
     # Hyperparameter
     parser.add_argument('--batch_size', type=int, default=256)

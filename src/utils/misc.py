@@ -14,6 +14,7 @@ from torchsummary import summary
         
 def update_dataroot(dataset_name, data_root):
     if dataset_name == 'imagenet':
+        print('ImageNet data is assumed to be located at $SLURM_TMPDIR')
         data_root = get_local_scratch_path()
     return data_root
 

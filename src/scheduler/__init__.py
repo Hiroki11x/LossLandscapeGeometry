@@ -1,5 +1,6 @@
 # coding: utf-8
 import math
+import torch
 
 def linear_warmup_cosine_decay(warmup_steps, total_steps):
 
@@ -11,3 +12,6 @@ def linear_warmup_cosine_decay(warmup_steps, total_steps):
         return 0.5 * (1.0 + math.cos(math.pi * progress))
 
     return fn
+
+def multi_step_decay(optimizer):
+    return torch.optim.lr_scheduler.MultiStepLR(optimizer, [25], gamma=0.1) 
