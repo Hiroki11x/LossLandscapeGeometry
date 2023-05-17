@@ -75,7 +75,7 @@ To run the ablation study of the batchszie in the word language model task of WI
 To run the ablation study of the model architecture type in the segementation task of Vaihingen, execute the following shell.
 
 ```
-./exp/segmentation/vaihingen/model-arch-vaihingen.sh
+./exp/segmentation/vaihingen/model-type-vaihingen.sh
 ```
 
 ## Structure
