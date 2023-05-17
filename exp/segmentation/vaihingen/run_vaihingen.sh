@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --cpus-per-task=4 
-#SBATCH --gres=gpu:2 
+#SBATCH --cpus-per-task=2 
+#SBATCH --gres=gpu:1 
 #SBATCH --mem=16G
-#SBATCH --time=12:00:00
+#SBATCH --time=24:00:00
 #SBATCH -o slurm-%j.out
 
 # ======== Module, Virtualenv and Other Dependencies ======
@@ -12,7 +12,7 @@ export PYTHONPATH=.
 export PATH=$PYTHON_PATH:$PATH
 
 # ======== Configuration ========
-PROGRAM="main_language_model.py"
+PROGRAM="main_segmentation.py"
 pushd ../../../src
 PYTHON_ARGS=$@
 

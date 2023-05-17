@@ -1,34 +1,27 @@
 # ======== Wandb Configuration ========
 WANDB_ENTITY='YOUR_ENTITY'
-WANDB_PROJECT_NAME='model-type-cifar'
+WANDB_PROJECT_NAME='model-type-vaihingen'
 
 # ======== Environmental Setting ========
 SEED="1234"
-NUM_WORKER="4"
-NUM_GPU="2"
+NUM_WORKER="1"
+NUM_GPU="1"
 
 # ======== Configuration ========
-DATASET="cifar10"
-DATA_ROOT="../data/cifar10"
+DATASET="vaihingen"
+DATA_ROOT="../data/vaihingen"
 
 # ======== Determined Hyperparam ========
 OPT="momentum_sgd"
-PATIENCE="400"
-NUM_CLASS="10"
+NUM_CLASS="6"
 MOMENTUM="0.9"
-BATCH_SIZE="256"
+BATCH_SIZE="10"
 LR="0.01"
-WEIGHT_DECAY="1e-6"
+WEIGHT_DECAY="1e-5"
 
 # ======== Hyperparam for Sweep ========
-MODEL_LIST=('resnet18_2_cifar' 'medium_mlp')
-EPOCH_LIST=(150 400)
-
-
-# Num of Param Information
-# resnet18_2_cifar  : 44662922
-# medium_mlp        : 46190602
-
+MODEL_LIST=('unet' 'segnet')
+EPOCH_LIST=(26 50)
 
 # ======== Hyper Parameter Search Loop  ========
 for model in "${MODEL_LIST[@]}" ; do
@@ -54,7 +47,8 @@ for model in "${MODEL_LIST[@]}" ; do
                     --wandb_entity ${WANDB_ENTITY} \
                     --wandb_project_name ${WANDB_PROJECT_NAME} \
                     "
-        CMD="sbatch run_cifar.sh ${SHELL_ARGS}"
+
+        CMD="sbatch run_vaihingen.sh ${SHELL_ARGS}"
         echo $CMD
         eval $CMD
 

@@ -78,6 +78,33 @@ To run the ablation study of the model architecture type in the segementation ta
 ./exp/segmentation/vaihingen/model-arch-vaihingen.sh
 ```
 
+## Structure
+
+```
+.
+├── README.md
+├── exp
+│   ├── env
+│   │   ├── cluster_env.sh
+│   │   └── requirements.txt
+│   ├── image_classification
+│   │   ├── cifar10
+│   │   └── imagenet1k
+│   ├── segmentation
+│   │   └── vaihingen
+│   └── word_language_model
+│       └── wikitext2
+└── src
+    ├── main_image_classification.py
+    ├── main_language_model.py
+    ├── main_segmentation.py
+    ├── dataset
+    ├── model
+    ├── optimizer
+    ├── scheduler
+    └── utils
+```
+
 ## License
 All codes for experiments are modifications of the codes provided by [PyTorch's official implementation](https://github.com/pytorch/examples) for image classification and language modeling tasks and [code of Audebert et al.](https://github.com/nshaud/DeepNetsForEO) for segmentation task.
 The license for the official Pytorch implementation is the BSD-3-Clause, and the license for the segmentation task implementation is GPLv3.
