@@ -12,7 +12,7 @@ DATASET="imagenet"
 DATA_ROOT="None"
 
 # ======== Determined Hyperparam ========
-EPOCHS="90" 
+EPOCHS="180"
 NUM_CLASS="1000"
 MOMENTUM="0.9"
 BATCH_SIZE="256"
@@ -23,7 +23,7 @@ LR_SCHEDULE="True"
 WARMUP_EPOCHS="3"
 
 # ======== Hyperparam for Sweep ========
-MODEL_LIST=("resnet18_1" "resnet18_2" "resnet50_1" "resnet50_2" "resnet152_1" "resnet152_05" "resnet152_1")
+MODEL_LIST=("resnet18_1" "resnet18_2" "resnet18_3" "resnet50_1" "resnet50_2" "resnet152_05" "resnet152_1")
 LR_LIST=(0.1 0.075)
 
 

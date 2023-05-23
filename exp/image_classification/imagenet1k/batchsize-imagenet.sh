@@ -12,7 +12,7 @@ DATASET="imagenet"
 DATA_ROOT="None"
 
 # ======== Determined Hyperparam ========
-EPOCHS="90"
+EPOCHS="180"
 NUM_CLASS="1000"
 MOMENTUM="0.9"
 OPT="momentum_sgd"
