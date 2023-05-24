@@ -1,6 +1,6 @@
 # No Wrong Turns: The Simple Geometry Of Neural Networks Optimization Paths 
 
-The link of manuscript in OpenReview is [here](https://openreview.net/forum?id=zlW9RsqdLg)
+The link of manuscript in Arxiv is [here]()
 
 ## Abstract
 Understanding the optimization dynamics of neural networks is necessary for closing the gap between theory and practice. 
@@ -109,4 +109,8 @@ To run the ablation study of the model architecture type in the segementation ta
 All codes for experiments are modifications of the codes provided by [PyTorch's official implementation](https://github.com/pytorch/examples) for image classification and language modeling tasks and [code of Audebert et al.](https://github.com/nshaud/DeepNetsForEO) for segmentation task.
 The license for the official Pytorch implementation is the BSD-3-Clause, and the license for the segmentation task implementation is GPLv3.
 
-
+## Paper authors
+- [Charles Guille-Escuret](https://charlesge.github.io/)
+- [Hiroki Naganuma](https://hiroki11x.github.io/)
+- [Kilian Fatras](https://kilianfatras.github.io/)
+- [Ioannis Mitliagkas](http://mitliagkas.github.io/)
