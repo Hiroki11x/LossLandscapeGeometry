@@ -1,6 +1,6 @@
 # No Wrong Turns: The Simple Geometry Of Neural Networks Optimization Paths 
 
-The link of manuscript in Arxiv is [here]()
+The link of manuscript in Arxiv is [here](https://arxiv.org/abs/2306.11922)
 
 ## Abstract
 Understanding the optimization dynamics of neural networks is necessary for closing the gap between theory and practice. 
