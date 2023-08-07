@@ -286,56 +286,6 @@ def trainval(exp_dict, X_star):
             if exp_dict["use_scheduler"]:
                 scheduler.step()
 
-
-            if not exp_dict['fast_compute']:
-                if iter % 100 == 0:
-                    batch_dict = get_batch_list_grads(batch_list, model, opt, X_star)
-                    batch_dict['iteration'] = iter
-                    batch_dict['epoch'] = epoch
-                    wandb.log(batch_dict)
-
-                if iter % 51 == 0:
-                    # Initialize Cosine Log Dictionary
-                    cosine_dict = {} 
-
-                    # compute g_i and x_i-x* 
-                    x_i = weights
-                    g_i = grads
-                    diff_x_i_and_x_star = x_i - X_star
-                    
-                    # compute orth_g_i = g_i - (g_i^T . (x_i - x*)) * (x_i - x*) / ||x_i-x*||^2
-                    _norm_i = norm_dist
-                    orth_g_i = g_i - dot_prod * diff_x_i_and_x_star /((_norm_i )** 2)
-
-                    base_grad_orth = orth_g_i
-                    base_x = x_i
-
-                k = iter % 51
-                if k in [1, 2, 5, 10, 20, 50]:
-                    
-                    # compute orth_g_i+k 
-                    x_k = weights
-                    g_k = grads
-                    diff_x_k_and_x_star = x_k - X_star
-                    _norm_k = norm_dist
-                    orth_g_k = g_k - dot_prod * diff_x_k_and_x_star / ((_norm_k )** 2)
-
-                    # compute sim_k = cosine(base_grad_orth, orth_g_i+k)
-                    sim_k = torch.cosine_similarity(base_grad_orth, orth_g_k, dim=0)
-
-                    # compute dist_k = ||base_x - x_i+k||_2
-                    dist_k = torch.norm(base_x - x_k, p=2)
-
-                    # cosine_dict[str(k)].append((sim_k, dist_k))
-                    cosine_dict[f'sim_{k}'] = sim_k
-                    cosine_dict[f'dist_{k}'] = dist_k
-
-                    if k in [50]:
-                        cosine_dict['iteration'] = iter
-                        cosine_dict['epoch'] = epoch
-                        
-                        wandb.log(cosine_dict)
-
             score_dict = {
                 "iteration": iter,
                 "epoch": epoch,
