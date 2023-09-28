@@ -1,7 +1,5 @@
 # No Wrong Turns: The Simple Geometry Of Neural Networks Optimization Paths 
 
-The link of manuscript in OpenReview is [here](https://openreview.net/forum?id=zlW9RsqdLg)
-
 ## Abstract
 Understanding the optimization dynamics of neural networks is necessary for closing the gap between theory and practice. 
 Stochastic first-order optimization algorithms are known to efficiently locate favorable minima in deep neural networks. This efficiency, however, contrasts with the non-convex and seemingly complex structure of neural loss landscapes. In this study, we delve into the fundamental geometric properties of sampled gradients along optimization paths. We focus on two key quantities, which appear in the restricted secant inequality and error bound.
